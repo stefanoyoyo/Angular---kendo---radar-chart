@@ -6,15 +6,15 @@ import { AxisLabelContentArgs } from '@progress/kendo-angular-charts';
     template: `
       <kendo-chart [title]="{ text: 'Market Value of Major Banks /bln/' }">
         <kendo-chart-series>
-          <kendo-chart-series-item type="radarLine"
-                                   name="Market value as of 2007"
-                                   [data]="banksData" field="pre" categoryField="name">
+          <kendo-chart-series-item 
+            type="radarLine"
+            [color]="'blue'"
+            name="Market value as of 2007"
+            [data]="banksData" 
+            field="pre" 
+            categoryField="name">
           </kendo-chart-series-item>
         </kendo-chart-series>
-        <kendo-chart-value-axis>
-            <kendo-chart-value-axis-item [labels]="{ format: 'C0' }">
-            </kendo-chart-value-axis-item>
-        </kendo-chart-value-axis>
         <kendo-chart-legend position="bottom"></kendo-chart-legend>
       </kendo-chart>
     `
@@ -36,6 +36,7 @@ import { AxisLabelContentArgs } from '@progress/kendo-angular-charts';
       { name: 'Citigroup',  pre: 91, post: 19 },
       { name: 'RBS', pre: 255, post: 5 }
     ];
+    
 
     public labelContent(e: AxisLabelContentArgs): string {
         return `${ e.dataItem.time.substring(0, 2) }h`;
