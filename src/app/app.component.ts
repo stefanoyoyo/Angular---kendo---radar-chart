@@ -5,6 +5,11 @@ import { AxisLabelContentArgs } from '@progress/kendo-angular-charts';
     selector: 'my-app',
     template: `
       <kendo-chart [title]="{ text: 'Market Value of Major Banks /bln/' }">
+
+      <kendo-chart-value-axis>
+        <kendo-chart-value-axis-item [labels]="{ format: 'C0', content: textContent }">
+        </kendo-chart-value-axis-item>
+      </kendo-chart-value-axis>
         <kendo-chart-series>
           <kendo-chart-series-item 
             type="radarLine"
@@ -40,5 +45,9 @@ import { AxisLabelContentArgs } from '@progress/kendo-angular-charts';
 
     public labelContent(e: AxisLabelContentArgs): string {
         return `${ e.dataItem.time.substring(0, 2) }h`;
+    }
+
+    public textContent(e: AxisLabelContentArgs): string {
+      return '';
     }
   }
