@@ -7,7 +7,7 @@ import { AxisLabelContentArgs } from '@progress/kendo-angular-charts';
       <kendo-chart [title]="{ text: 'Market Value of Major Banks /bln/' }">
 
       <kendo-chart-value-axis>
-        <kendo-chart-value-axis-item [labels]="{ format: 'C0', content: textContent }">
+        <kendo-chart-value-axis-item [labels]="{ content: textContent }">
         </kendo-chart-value-axis-item>
       </kendo-chart-value-axis>
         <kendo-chart-series>
@@ -49,6 +49,8 @@ import { AxisLabelContentArgs } from '@progress/kendo-angular-charts';
 
     /**Per nascondere gli elementi che appaiono sulla griglia */
     public textContent(e: AxisLabelContentArgs): string {
+
+      return e.text;
       return '';
     }
   }
