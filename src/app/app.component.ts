@@ -47,6 +47,7 @@ import { AxisLabelContentArgs } from '@progress/kendo-angular-charts';
         return `${ e.dataItem.time.substring(0, 2) }h`;
     }
 
+    /**Per nascondere gli elementi che appaiono sulla griglia */
     public textContent(e: AxisLabelContentArgs): string {
       return '';
     }
